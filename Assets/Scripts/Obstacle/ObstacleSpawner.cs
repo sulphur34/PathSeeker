@@ -18,8 +18,7 @@ public class ObstacleSpawner : ObjectPool
         _spawnOffsetZ = 20;
         _distanceToSpawnNext = 0.6f;
         Initialize(_obstacles);
-        _lastCameraPosition = _camera.transform.position;
-        
+        _lastCameraPosition = _camera.transform.position;        
     }
 
     private void Update()
@@ -52,6 +51,7 @@ public class ObstacleSpawner : ObjectPool
 
         result = obstacle;
     }
+
     private void SpawnUpperObstacle(Vector3 _position)
     {
         SpawnObstacle(_position, out GameObject obstacle);
@@ -59,5 +59,4 @@ public class ObstacleSpawner : ObjectPool
         if(obstacle != null)
             obstacle.transform.rotation = Quaternion.Euler(0, 0, 180);
     }
-
 }

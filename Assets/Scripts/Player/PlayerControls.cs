@@ -21,6 +21,7 @@ public class PlayerControls : MonoBehaviour
             {
                 _mover.AddVerticalVelocity();
             }
+
             if (Input.GetMouseButtonDown(1))
             {
                 _weapon.Shoot();

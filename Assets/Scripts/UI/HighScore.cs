@@ -6,6 +6,6 @@ public class HighScore : Score
         
     private void Update()
     {
-        SetScoreView(_player.Score.ToString());
+        SetScoreView(_player.HighScore.ToString());
     }
 }

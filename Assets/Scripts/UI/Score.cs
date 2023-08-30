@@ -13,6 +13,4 @@ public class Score : MonoBehaviour
         string stringFiller = new string(_filler, _scoreLineLength - score.Length);
         _score.text = stringFiller + score;
     }
-
-
 }
