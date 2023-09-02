@@ -36,7 +36,7 @@ public class PlayerMover : MonoBehaviour
         _rigidbody.AddForce(Vector2.up * _tapForce, ForceMode2D.Force);
     }
 
-    public void ResetPlayer()
+    public void Reset()
     {
         _rigidbody.velocity = _zeroVerticalVelocity;
         transform.position = _startPosition;

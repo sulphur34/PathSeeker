@@ -31,14 +31,14 @@ public class Player : MonoBehaviour
     public void Die()
     {
         GameOver?.Invoke();
-        _mover.ResetPlayer();
+        _mover.Reset();
         GetComponent<Weapon>().ResetPool();
         _score = 0;
     }
 
-    public void ResetPlayer()
+    public void Reset()
     {
-        _mover.ResetPlayer();
+        _mover.Reset();
         _score = 0;
     }
 }

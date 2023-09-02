@@ -3,9 +3,8 @@ using UnityEngine;
 public class ObstacleSpawner : ObjectPool
 {
     [SerializeField] private GameObject[] _obstacles;
-    [SerializeField] private float _upperSpawnPositionY;
-    [SerializeField] private float _lowerSpawnPositionY;
-    [SerializeField] private float _spawnOffsetX;
+    [SerializeField] private Vector2 _upperSpawnPosition;
+    [SerializeField] private Vector2 _lowerSpawnPosition;
 
     private Vector3 _upperSpawnPoint;
     private Vector3 _lowerSpawnPoint;
@@ -24,11 +23,11 @@ public class ObstacleSpawner : ObjectPool
     private void Update()
     {
         _upperSpawnPoint = 
-            new Vector3(_spawnOffsetX + _camera.transform.position.x, 
-            _upperSpawnPositionY, _spawnOffsetZ);
+            new Vector3(_upperSpawnPosition.x + _camera.transform.position.x, 
+            _upperSpawnPosition.y, _spawnOffsetZ);
         _lowerSpawnPoint = 
-            new Vector3(_spawnOffsetX + _camera.transform.position.x, 
-            _lowerSpawnPositionY, _spawnOffsetZ);
+            new Vector3(_lowerSpawnPosition.x + _camera.transform.position.x, 
+            _lowerSpawnPosition.y, _spawnOffsetZ);
 
         if (Time.timeSinceLevelLoad > 1f && 
             Vector3.Distance(_camera.transform.position, _lastCameraPosition) >= _distanceToSpawnNext) 

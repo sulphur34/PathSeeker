@@ -45,7 +45,7 @@ public class Game : MonoBehaviour
     private void StartGame()
     {
         Time.timeScale = 1;
-        _player.ResetPlayer();
+        _player.Reset();
     }
 
     public void OnGameOver()

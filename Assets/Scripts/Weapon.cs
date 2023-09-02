@@ -2,10 +2,10 @@ using UnityEngine;
 
 public class Weapon : ObjectPool
 {
-    [SerializeField] GameObject _bulletPrefab;
-    [SerializeField] Transform _firePosition;
-    [SerializeField] float _fireDelay;
-    [SerializeField] float _fireForce;
+    [SerializeField] private GameObject _bulletPrefab;
+    [SerializeField] private Transform _firePosition;
+    [SerializeField] private float _fireDelay;
+    [SerializeField] private float _fireForce;
 
     private Vector2 _fireDirection;
     private float _shootTimer;
@@ -26,16 +26,16 @@ public class Weapon : ObjectPool
     {
         if (_shootTimer >= _fireDelay && TryGetObject(out GameObject bullet))
         {
-            GetOrientation();
+            SetFireDirection();
             bullet.SetActive(true);
             bullet.transform.position = _firePosition.position;
             var velocity = _fireDirection * _fireForce;
-            bullet.GetComponent<Rigidbody2D>().AddForce(velocity);
+            bullet.GetComponent<Bullet>().SetImpact(velocity);
             _shootTimer = 0f;
         }
     }
 
-    private void GetOrientation()
+    private void SetFireDirection()
     {
         float rotationAngle = transform.rotation.eulerAngles.z * Mathf.Deg2Rad;
         float directionX = Mathf.Cos(rotationAngle);

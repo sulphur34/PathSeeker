@@ -24,10 +24,10 @@ public class Enemy : MonoBehaviour
     {
         if (collision.TryGetComponent(out EnemyBullet bullet) == false)
         {
-            GameObject ammunition = transform.Find("Ammunition").gameObject;
+            Ammunition ammunition = GetComponentInChildren<Ammunition>();
             gameObject.GetComponent<Weapon>().ResetPool();
             gameObject.SetActive(false);            
-            ammunition.SetActive(true);
+            ammunition?.gameObject.SetActive(true);
         }
     }
 }
