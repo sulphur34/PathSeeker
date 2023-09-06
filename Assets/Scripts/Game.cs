@@ -37,8 +37,8 @@ public class Game : MonoBehaviour
     private void OnRestartButtonClick()
     {
         _endScreen.Close();
-        _obstacleSpawner.ResetPool();
-        _enemySpawner.ResetPool();
+        _obstacleSpawner.Reset();
+        _enemySpawner.Reset();
         StartGame();
     }
 

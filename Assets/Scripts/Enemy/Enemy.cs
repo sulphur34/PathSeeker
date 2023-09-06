@@ -17,7 +17,7 @@ public class Enemy : MonoBehaviour
 
     private void OnDisable()
     {
-        _weapon?.ResetPool();
+        _weapon?.Reset();
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -25,7 +25,7 @@ public class Enemy : MonoBehaviour
         if (collision.TryGetComponent(out EnemyBullet bullet) == false)
         {
             Ammunition ammunition = GetComponentInChildren<Ammunition>();
-            gameObject.GetComponent<Weapon>().ResetPool();
+            _weapon.Reset();
             gameObject.SetActive(false);            
             ammunition?.gameObject.SetActive(true);
         }

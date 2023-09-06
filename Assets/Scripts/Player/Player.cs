@@ -32,7 +32,7 @@ public class Player : MonoBehaviour
     {
         GameOver?.Invoke();
         _mover.Reset();
-        GetComponent<Weapon>().ResetPool();
+        GetComponent<Weapon>().Reset();
         _score = 0;
     }
 

@@ -11,7 +11,7 @@ public class ObjectPool : MonoBehaviour
     private System.Random _random;
     private List<GameObject> _pool;
 
-    public void ResetPool()
+    public void Reset()
     {
         foreach (var item in _pool)
         {
@@ -20,7 +20,7 @@ public class ObjectPool : MonoBehaviour
         }
     }
 
-    protected void Initialize(GameObject[] prefabs)
+    protected void Initialize<T>(T[] prefabs) where T : MonoBehaviour
     {
         _pool = new List<GameObject>();
         _camera = Camera.main;
@@ -34,9 +34,9 @@ public class ObjectPool : MonoBehaviour
         }
     }
 
-    protected void Initialize(GameObject prefab)
+    protected void Initialize<T>(T prefab) where T : MonoBehaviour
     {
-        Initialize(new GameObject[] { prefab });
+        Initialize(new T[] { prefab });
     }
 
     public void SetContainer(GameObject container)
@@ -64,10 +64,10 @@ public class ObjectPool : MonoBehaviour
         }
     }
 
-    private GameObject GetRandomContainer(GameObject[] prefabs)
+    private GameObject GetRandomContainer<T>(T[] prefabs) where T : MonoBehaviour
     {
         int containerIndex = _random.Next(prefabs.Length);
-        GameObject gameObject = Instantiate(prefabs[containerIndex], _container.transform);
+        GameObject gameObject = Instantiate(prefabs[containerIndex].gameObject, _container.transform);
         return gameObject;
     }
 }

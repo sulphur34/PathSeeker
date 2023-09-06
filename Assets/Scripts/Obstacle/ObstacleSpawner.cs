@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class ObstacleSpawner : ObjectPool
 {
-    [SerializeField] private GameObject[] _obstacles;
+    [SerializeField] private Obstacle[] _obstacles;
     [SerializeField] private Vector2 _upperSpawnPosition;
     [SerializeField] private Vector2 _lowerSpawnPosition;
 

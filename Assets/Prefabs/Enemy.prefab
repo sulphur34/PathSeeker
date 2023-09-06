@@ -210,7 +210,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _container: {fileID: 6317005653630973184}
   _capacity: 5
-  _bulletPrefab: {fileID: 441824586011206592, guid: e478cca1821375d479d0fdef1e59be74, type: 3}
+  _bulletPrefab: {fileID: 8574095490806305661, guid: e478cca1821375d479d0fdef1e59be74, type: 3}
   _firePosition: {fileID: 4039294918272478926}
   _fireDelay: 2
   _fireForce: -20

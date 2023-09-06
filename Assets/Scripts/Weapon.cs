@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class Weapon : ObjectPool
 {
-    [SerializeField] private GameObject _bulletPrefab;
+    [SerializeField] private Bullet _bulletPrefab;
     [SerializeField] private Transform _firePosition;
     [SerializeField] private float _fireDelay;
     [SerializeField] private float _fireForce;

@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class EnemySpawner : ObjectPool
 {
-    [SerializeField] private GameObject[] _enemyPrefab;
+    [SerializeField] private Enemy[] _enemyPrefab;
     [SerializeField] private Vector2 _upperSpawnBound;
     [SerializeField] private Vector2 _lowerSpawnBound;
     [SerializeField] private float _spawnDelay;
