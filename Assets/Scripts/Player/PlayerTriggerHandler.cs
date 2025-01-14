@@ -9,6 +9,7 @@ public class PlayerTriggerHandler : MonoBehaviour
     {
         _player = GetComponent<Player>();
     }
+    
     private void OnTriggerEnter2D(Collider2D collision)
     {
         _player.Die();
